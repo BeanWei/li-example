@@ -1,0 +1,38 @@
+# HTTP Server.
+server:
+  address: ":8199"
+  serverRoot: "resource/public"
+  sessionIdName: "x-api-sid"
+
+# Global logging.
+logger:
+  level: "all"
+  stdout: false
+
+# Database.
+database:
+  logger:
+    level: "all"
+    stdout: false
+  default:
+    link: "postgres://root:1234567890@127.0.0.1:5432/li-example?sslmode=disable"
+    type: "pgsql"
+    debug: true
+
+# Redis.
+redis:
+  cache:
+    address: 127.0.0.1:6379
+    db: 1
+    pass: 123456
+    idleTimeout: 600
+  default:
+    address: 127.0.0.1:6379
+    db: 1
+
+# OSS.
+file:
+  default:
+    adapter: "local"
+  local:
+    dir: "./tmp/upload"
